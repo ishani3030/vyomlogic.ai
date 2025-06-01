@@ -21,18 +21,31 @@
             -ms-overflow-style: none; /* IE and Edge */
             scrollbar-width: none; /* Firefox */
         }
+        /* Basic spinner animation */
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.3); /* Darker spinner for light background */
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-100 antialiased">
+<body class="bg-gray-100 text-gray-800 antialiased">
 
-    <header class="bg-gray-800 shadow-lg py-4 px-6 md:px-12 fixed w-full z-50 rounded-b-xl">
+    <header class="bg-white shadow-lg py-4 px-6 md:px-12 fixed w-full z-50 rounded-b-xl border-b border-gray-200">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-3xl font-bold text-blue-400 hover:text-blue-300 transition duration-300 ease-in-out rounded-lg p-2">
+            <a href="#" class="text-3xl font-bold text-blue-600 hover:text-blue-500 transition duration-300 ease-in-out rounded-lg p-2">
                 Vyom Logic AI
             </a>
 
             <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md p-2">
+                <button id="mobile-menu-button" class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md p-2">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -40,80 +53,92 @@
             </div>
 
             <nav class="hidden md:flex space-x-8">
-                <a href="#home" class="text-gray-200 hover:text-blue-400 font-medium transition duration-300 ease-in-out rounded-lg p-2">Home</a>
-                <a href="#solutions" class="text-gray-200 hover:text-blue-400 font-medium transition duration-300 ease-in-out rounded-lg p-2">Solutions</a>
-                <a href="#about" class="text-gray-200 hover:text-blue-400 font-medium transition duration-300 ease-in-out rounded-lg p-2">About Us</a>
-                <a href="#contact" class="text-gray-200 hover:text-blue-400 font-medium transition duration-300 ease-in-out rounded-lg p-2">Contact</a>
+                <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 ease-in-out rounded-lg p-2">Home</a>
+                <a href="#solutions" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 ease-in-out rounded-lg p-2">Solutions</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 ease-in-out rounded-lg p-2">About Us</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 ease-in-out rounded-lg p-2">Contact</a>
             </nav>
         </div>
 
-        <nav id="mobile-menu" class="md:hidden mt-4 space-y-4 text-center bg-gray-700 rounded-lg py-4 hidden">
-            <a href="#home" class="block text-gray-100 hover:text-blue-400 font-medium py-2 rounded-md transition duration-300 ease-in-out">Home</a>
-            <a href="#solutions" class="block text-gray-100 hover:text-blue-400 font-medium py-2 rounded-md transition duration-300 ease-in-out">Solutions</a>
-            <a href="#about" class="block text-gray-100 hover:text-blue-400 font-medium py-2 rounded-md transition duration-300 ease-in-out">About Us</a>
-            <a href="#contact" class="block text-gray-100 hover:text-blue-400 font-medium py-2 rounded-md transition duration-300 ease-in-out">Contact</a>
+        <nav id="mobile-menu" class="md:hidden mt-4 space-y-4 text-center bg-gray-50 rounded-lg py-4 hidden border-t border-gray-200">
+            <a href="#home" class="block text-gray-700 hover:text-blue-600 font-medium py-2 rounded-md transition duration-300 ease-in-out">Home</a>
+            <a href="#solutions" class="block text-gray-700 hover:text-blue-600 font-medium py-2 rounded-md transition duration-300 ease-in-out">Solutions</a>
+            <a href="#about" class="block text-gray-700 hover:text-blue-600 font-medium py-2 rounded-md transition duration-300 ease-in-out">About Us</a>
+            <a href="#contact" class="block text-gray-700 hover:text-blue-600 font-medium py-2 rounded-md transition duration-300 ease-in-out">Contact</a>
         </nav>
     </header>
 
-    <main class="pt-24"> <section id="home" class="relative h-screen flex items-center justify-center text-center bg-gradient-to-br from-gray-900 to-gray-800 overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 opacity-20"></div>
-
+    <main class="pt-24">
+        <section id="home" class="relative h-screen flex flex-col items-center justify-center text-center bg-gray-100 overflow-hidden">
             <div class="relative z-10 p-6 md:p-12 max-w-4xl mx-auto">
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-white mb-6 animate-pulse">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-gray-900 mb-6 animate-pulse">
                     Innovating the Future with AI & Backend Excellence
                 </h1>
-                <p class="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                <p class="text-lg sm:text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
                     Vyom Logic AI delivers high-end Artificial Intelligence and robust Backend solutions, empowering businesses and enhancing human life globally.
                 </p>
-                <a href="#solutions" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75">
-                    Explore Our Solutions
-                </a>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="#solutions" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75">
+                        Explore Our Solutions
+                    </a>
+                </div>
             </div>
+            <div id="hero-image-container" class="relative z-0 w-full h-full flex items-center justify-center mt-8">
+                </div>
         </section>
 
-        <section id="solutions" class="py-16 md:py-24 bg-gray-900">
+        <section id="solutions" class="py-16 md:py-24 bg-gray-100">
             <div class="container mx-auto px-6 md:px-12">
-                <h2 class="text-4xl font-bold text-center text-blue-400 mb-12">Our High-End Solutions</h2>
+                <h2 class="text-4xl font-bold text-center text-blue-600 mb-12">Our High-End Solutions</h2>
+                <div class="text-center mb-8">
+                    <button id="generate-solution-images-btn" class="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-75">
+                        <span id="solutions-spinner" class="hidden spinner mr-2"></span>
+                        Generate Solution Images
+                    </button>
+                </div>
+                <div id="solution-images-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    </div>
+
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                    <div class="bg-gray-800 p-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out border border-gray-700">
-                        <h3 class="text-2xl font-semibold text-white mb-4">Intelligent Automation</h3>
-                        <p class="text-gray-300 leading-relaxed">
+                    <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out border border-gray-200">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Intelligent Automation</h3>
+                        <p class="text-gray-700 leading-relaxed">
                             Streamline operations and boost efficiency with AI-driven automation. From repetitive tasks to complex decision-making, our solutions learn and adapt.
                         </p>
                     </div>
 
-                    <div class="bg-gray-800 p-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out border border-gray-700">
-                        <h3 class="text-2xl font-semibold text-white mb-4">Predictive Analytics</h3>
-                        <p class="text-gray-300 leading-relaxed">
+                    <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out border border-gray-200">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Predictive Analytics</h3>
+                        <p class="text-gray-700 leading-relaxed">
                             Leverage data to foresee trends, identify opportunities, and mitigate risks. Our AI models provide actionable insights for strategic growth.
                         </p>
                     </div>
 
-                    <div class="bg-gray-800 p-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out border border-gray-700">
-                        <h3 class="text-2xl font-semibold text-white mb-4">Natural Language Processing (NLP)</h3>
-                        <p class="text-gray-300 leading-relaxed">
+                    <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out border border-gray-200">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Natural Language Processing (NLP)</h3>
+                        <p class="text-gray-700 leading-relaxed">
                             Unlock the power of human language. Our NLP solutions enable intelligent chatbots, sentiment analysis, and content generation.
                         </p>
                     </div>
 
-                    <div class="bg-gray-800 p-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out border border-gray-700">
-                        <h3 class="text-2xl font-semibold text-white mb-4">Scalable Cloud Infrastructure</h3>
-                        <p class="text-gray-300 leading-relaxed">
+                    <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out border border-gray-200">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Scalable Cloud Infrastructure</h3>
+                        <p class="text-gray-700 leading-relaxed">
                             Build robust and scalable backend systems on leading cloud platforms. Ensure your applications perform flawlessly under any load.
                         </p>
                     </div>
 
-                    <div class="bg-gray-800 p-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out border border-gray-700">
-                        <h3 class="text-2xl font-semibold text-white mb-4">API Development & Integration</h3>
-                        <p class="text-gray-300 leading-relaxed">
+                    <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out border border-gray-200">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">API Development & Integration</h3>
+                        <p class="text-gray-700 leading-relaxed">
                             Seamlessly connect your services and data with secure, efficient API development and integration services.
                         </p>
                     </div>
 
-                    <div class="bg-gray-800 p-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out border border-gray-700">
-                        <h3 class="text-2xl font-semibold text-white mb-4">Database Management</h3>
-                        <p class="text-gray-300 leading-relaxed">
+                    <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out border border-gray-200">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Database Management</h3>
+                        <p class="text-gray-700 leading-relaxed">
                             Expert design, implementation, and optimization of databases to ensure data integrity, security, and high performance.
                         </p>
                     </div>
@@ -122,36 +147,48 @@
             </div>
         </section>
 
-        <section id="about" class="py-16 md:py-24 bg-gray-800">
+        <section id="about" class="py-16 md:py-24 bg-gray-200">
             <div class="container mx-auto px-6 md:px-12 text-center">
-                <h2 class="text-4xl font-bold text-blue-400 mb-8">About Vyom Logic AI</h2>
-                <p class="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto mb-6">
+                <h2 class="text-4xl font-bold text-blue-600 mb-8">About Vyom Logic AI</h2>
+                <p class="text-lg text-gray-800 leading-relaxed max-w-3xl mx-auto mb-6">
                     At Vyom Logic AI, our core philosophy revolves around harnessing the transformative power of Artificial Intelligence and robust backend systems to create tangible, positive impacts on human life. We believe technology should serve humanity, making processes more efficient, decisions more informed, and experiences more intuitive.
                 </p>
-                <p class="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                <p class="text-lg text-gray-800 leading-relaxed max-w-3xl mx-auto mb-12">
                     Our team is dedicated to pushing the boundaries of innovation, delivering solutions that are not just technically superior but also ethically sound and user-centric. We are committed to building a future where technology seamlessly integrates into our lives, empowering us to achieve more.
                 </p>
+
+                <div class="bg-white p-8 rounded-xl shadow-xl border border-gray-200 max-w-lg mx-auto">
+                    <img src="image_28073d.png" alt="Chirag Trivedi - CEO of Vyom Logic AI" class="w-48 h-48 rounded-full mx-auto mb-6 object-cover shadow-md border-4 border-blue-200" onerror="this.onerror=null; this.src='https://placehold.co/192x192/cccccc/333333?text=Image+Not+Found';">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-2">Chirag Trivedi</h3>
+                    <p class="text-xl text-blue-600 font-semibold mb-4">CEO & Founder</p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Chirag Trivedi is a visionary leader and an expert in Large Language Models (LLM) and Natural Language Processing (NLP). His profound understanding of AI drives Vyom Logic AI's mission to deliver cutting-edge solutions that redefine human-technology interaction.
+                    </p>
+                </div>
             </div>
         </section>
 
-        <section id="contact" class="py-16 md:py-24 bg-gray-900">
+        <section id="contact" class="py-16 md:py-24 bg-gray-100">
             <div class="container mx-auto px-6 md:px-12 text-center">
-                <h2 class="text-4xl font-bold text-blue-400 mb-8">Get In Touch</h2>
-                <p class="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto mb-8">
+                <h2 class="text-4xl font-bold text-blue-600 mb-8">Get In Touch</h2>
+                <p class="text-lg text-gray-800 leading-relaxed max-w-2xl mx-auto mb-8">
                     Interested in collaborating or learning more about how Vyom Logic AI can elevate your business? We'd love to hear from you.
                 </p>
-                <div class="bg-gray-800 p-8 rounded-xl shadow-xl inline-block border border-gray-700">
-                    <p class="text-xl font-semibold text-white mb-4">Email Us Directly:</p>
-                    <a href="mailto:vyomlogicai@gmail.com" class="text-blue-400 hover:text-blue-300 text-2xl font-bold transition duration-300 ease-in-out block rounded-lg p-2">
+                <div class="bg-white p-8 rounded-xl shadow-xl inline-block border border-gray-200">
+                    <p class="text-xl font-semibold text-gray-900 mb-4">Email Us Directly:</p>
+                    <a href="mailto:info@vyomlogic.ai" class="text-blue-600 hover:text-blue-500 text-2xl font-bold transition duration-300 ease-in-out block rounded-lg p-2">
                         info@vyomlogic.ai
                     </a>
+                    <p class="text-sm text-gray-600 mt-4">
+                        (Please replace with your actual company email address)
+                    </p>
                 </div>
-                </div>
+            </div>
         </section>
 
     </main>
 
-    <footer class="bg-gray-800 py-8 px-6 md:px-12 text-center text-gray-400 rounded-t-xl">
+    <footer class="bg-white py-8 px-6 md:px-12 text-center text-gray-600 rounded-t-xl border-t border-gray-200">
         <div class="container mx-auto">
             <p>&copy; 2025 Vyom Logic AI. All rights reserved.</p>
             <p class="mt-2">Innovating for a better future, one solution at a time.</p>
@@ -162,6 +199,9 @@
         document.addEventListener('DOMContentLoaded', () => {
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
+            const generateSolutionImagesBtn = document.getElementById('generate-solution-images-btn');
+            const solutionImagesGrid = document.getElementById('solution-images-grid');
+            const solutionsSpinner = document.getElementById('solutions-spinner');
 
             // Toggle mobile menu visibility
             mobileMenuButton.addEventListener('click', () => {
@@ -175,6 +215,110 @@
                         mobileMenu.classList.add('hidden');
                     }
                 });
+            });
+
+            /**
+             * Generates an AI image using the Imagen API and displays it.
+             * @param {string} prompt - The text prompt for image generation.
+             * @param {HTMLElement} containerElement - The DOM element where the image will be appended.
+             * @param {HTMLElement} spinnerElement - The spinner element to show/hide.
+             * @param {boolean} clearContainer - Whether to clear the container before adding new images.
+             */
+            async function generateImage(prompt, containerElement, spinnerElement, clearContainer = true) {
+                // Show spinner and disable button
+                spinnerElement.classList.remove('hidden');
+                // Disable the button that triggered this generation
+                const triggeringButton = spinnerElement.parentElement;
+                if (triggeringButton && triggeringButton.tagName === 'BUTTON') {
+                    triggeringButton.disabled = true;
+                    triggeringButton.classList.add('opacity-50', 'cursor-not-allowed');
+                }
+
+                if (clearContainer) {
+                    containerElement.innerHTML = ''; // Clear previous images
+                }
+
+                try {
+                    const payload = { instances: { prompt: prompt }, parameters: { "sampleCount": 1 } };
+                    // API key is handled by the Canvas environment for imagen-3.0-generate-002
+                    const apiKey = "";
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${apiKey}`;
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        console.error('API Error:', errorData);
+                        throw new Error(`Image generation failed: ${response.statusText} - ${errorData.error?.message || 'Unknown error'}`);
+                    }
+
+                    const result = await response.json();
+
+                    if (result.predictions && result.predictions.length > 0 && result.predictions[0].bytesBase64Encoded) {
+                        const imageUrl = `data:image/png;base64,${result.predictions[0].bytesBase64Encoded}`;
+                        const imgElement = document.createElement('img');
+                        imgElement.src = imageUrl;
+                        imgElement.alt = prompt;
+                        // Updated Tailwind classes for styling on light background
+                        imgElement.classList.add('w-full', 'h-auto', 'object-cover', 'rounded-xl', 'shadow-lg', 'border', 'border-gray-300');
+                        imgElement.style.maxHeight = '400px';
+                        imgElement.style.minHeight = '200px';
+                        imgElement.style.width = '100%';
+                        imgElement.style.maxWidth = '800px';
+                        imgElement.style.margin = '0 auto';
+
+                        containerElement.appendChild(imgElement);
+                    } else {
+                        console.warn('No image data found in the response.');
+                        containerElement.innerHTML = '<p class="text-red-600">Failed to generate image. Please try again.</p>'; // Darker error text
+                    }
+                } catch (error) {
+                    console.error('Error generating image:', error);
+                    containerElement.innerHTML = `<p class="text-red-600">Error: ${error.message}. Check console for details.</p>`; // Darker error text
+                } finally {
+                    // Hide spinner and enable button
+                    spinnerElement.classList.add('hidden');
+                    const triggeringButton = spinnerElement.parentElement;
+                    if (triggeringButton && triggeringButton.tagName === 'BUTTON') {
+                        triggeringButton.disabled = false;
+                        triggeringButton.classList.remove('opacity-50', 'cursor-not-allowed');
+                    }
+                }
+            }
+
+            // Event listener for Solution Images generation
+            generateSolutionImagesBtn.addEventListener('click', async () => {
+                const solutionPrompts = [
+                    "abstract representation of intelligent automation, gears and circuits, digital art, vibrant colors",
+                    "data visualization for predictive analytics, glowing charts and graphs, futuristic interface",
+                    "natural language processing interface, text bubbles and AI brain, clean design, conceptual",
+                    "scalable cloud infrastructure, interconnected servers, abstract network, secure data flow",
+                    "API development and integration, glowing data flow between software modules",
+                    "secure database management, abstract data fortress, digital security, cyber protection"
+                ];
+
+                solutionImagesGrid.innerHTML = ''; // Clear previous images
+                solutionsSpinner.classList.remove('hidden');
+                generateSolutionImagesBtn.disabled = true;
+                generateSolutionImagesBtn.classList.add('opacity-50', 'cursor-not-allowed');
+
+                try {
+                    for (const prompt of solutionPrompts) {
+                        // Generate each image one by one, appending to the grid
+                        await generateImage(prompt, solutionImagesGrid, solutionsSpinner, false); // Don't clear container for each
+                    }
+                } catch (error) {
+                    console.error('Error generating multiple solution images:', error);
+                    solutionImagesGrid.innerHTML += `<p class="text-red-600 col-span-full">Error generating some images: ${error.message}.</p>`;
+                } finally {
+                    solutionsSpinner.classList.add('hidden');
+                    generateSolutionImagesBtn.disabled = false;
+                    generateSolutionImagesBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                }
             });
         });
     </script>
