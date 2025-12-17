@@ -4,8 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vyom Logic AI - High-End AI & Backend Solutions</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Vyom Logic AI delivers cutting-edge Artificial Intelligence and robust backend solutions. Expert LLM, NLP, automation, and cloud infrastructure services for businesses worldwide.">
+    <meta name="keywords" content="AI solutions, backend development, LLM, NLP, machine learning, cloud infrastructure, API development, database management, intelligent automation, predictive analytics, Vyom Logic AI">
+    <meta name="author" content="Vyom Logic AI">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://vyomlogic.ai">
+    
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    
+    <!-- Google Analytics 4 (GA4) - Replace G-XXXXXXXXXX with your actual tracking ID -->
+    <!-- Uncomment and add your GA4 tracking ID when ready -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Vyom Logic AI",
+      "url": "https://vyomlogic.ai",
+      "logo": "https://vyomlogic.ai/image_28073d.png",
+      "description": "High-end Artificial Intelligence and robust Backend solutions provider",
+      "email": "business@vyomlogic.ai",
+      "founder": {
+        "@type": "Person",
+        "name": "Chirag Trivedi",
+        "jobTitle": "CEO & Founder"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "email": "business@vyomlogic.ai"
+      },
+      "areaServed": "Worldwide",
+      "serviceType": ["AI Solutions", "Backend Development", "LLM", "NLP", "Cloud Infrastructure", "Intelligent Automation", "Predictive Analytics", "API Development", "Database Management", "Agentic AI"]
+    }
+    </script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- EmailJS SDK - Uncomment and initialize after setting up EmailJS account -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>emailjs.init('9zr9UvCzrDoWIx36c');</script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         /* Custom styles for the Inter font and smooth scrolling */
@@ -20,19 +73,6 @@
         body {
             -ms-overflow-style: none; /* IE and Edge */
             scrollbar-width: none; /* Firefox */
-        }
-        /* Basic spinner animation */
-        .spinner {
-            border: 4px solid rgba(0, 0, 0, 0.3); /* Darker spinner for light background */
-            border-top: 4px solid #3498db;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -55,6 +95,7 @@
             <nav class="hidden md:flex space-x-8">
                 <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 ease-in-out rounded-lg p-2">Home</a>
                 <a href="#solutions" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 ease-in-out rounded-lg p-2">Solutions</a>
+                <a href="#portfolio" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 ease-in-out rounded-lg p-2">Portfolio</a>
                 <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 ease-in-out rounded-lg p-2">About Us</a>
                 <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 ease-in-out rounded-lg p-2">Contact</a>
             </nav>
@@ -63,6 +104,7 @@
         <nav id="mobile-menu" class="md:hidden mt-4 space-y-4 text-center bg-gray-50 rounded-lg py-4 hidden border-t border-gray-200">
             <a href="#home" class="block text-gray-700 hover:text-blue-600 font-medium py-2 rounded-md transition duration-300 ease-in-out">Home</a>
             <a href="#solutions" class="block text-gray-700 hover:text-blue-600 font-medium py-2 rounded-md transition duration-300 ease-in-out">Solutions</a>
+            <a href="#portfolio" class="block text-gray-700 hover:text-blue-600 font-medium py-2 rounded-md transition duration-300 ease-in-out">Portfolio</a>
             <a href="#about" class="block text-gray-700 hover:text-blue-600 font-medium py-2 rounded-md transition duration-300 ease-in-out">About Us</a>
             <a href="#contact" class="block text-gray-700 hover:text-blue-600 font-medium py-2 rounded-md transition duration-300 ease-in-out">Contact</a>
         </nav>
@@ -71,78 +113,166 @@
     <main class="pt-24">
         <section id="home" class="relative h-screen flex flex-col items-center justify-center text-center bg-gray-100 overflow-hidden">
             <div class="relative z-10 p-6 md:p-12 max-w-4xl mx-auto">
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-gray-900 mb-6 animate-pulse">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-gray-900 mb-6">
                     Innovating the Future with AI & Backend Excellence
                 </h1>
                 <p class="text-lg sm:text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
                     Vyom Logic AI delivers high-end Artificial Intelligence and robust Backend solutions, empowering businesses and enhancing human life globally.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                    <a href="#solutions" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75">
+                    <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75">
+                        Get Started Today
+                    </a>
+                    <a href="#solutions" class="inline-block bg-white hover:bg-gray-50 text-blue-600 font-bold py-3 px-8 rounded-full shadow-lg border-2 border-blue-600 transform hover:scale-105 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75">
                         Explore Our Solutions
                     </a>
                 </div>
-            </div>
-            <div id="hero-image-container" class="relative z-0 w-full h-full flex items-center justify-center mt-8">
+                <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm text-gray-600">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        <span>Expert AI Solutions</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        <span>24/7 Support</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        <span>Global Reach</span>
+                    </div>
                 </div>
+            </div>
         </section>
 
         <section id="solutions" class="py-16 md:py-24 bg-gray-100">
             <div class="container mx-auto px-6 md:px-12">
                 <h2 class="text-4xl font-bold text-center text-blue-600 mb-12">Our High-End Solutions</h2>
-                <div class="text-center mb-8">
-                    <button id="generate-solution-images-btn" class="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-75">
-                        <span id="solutions-spinner" class="hidden spinner mr-2"></span>
-                        Generate Solution Images
-                    </button>
-                </div>
-                <div id="solution-images-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                    </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                     <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out border border-gray-200">
+                        <div class="text-4xl mb-4">🤖</div>
                         <h3 class="text-2xl font-semibold text-gray-900 mb-4">Intelligent Automation</h3>
-                        <p class="text-gray-700 leading-relaxed">
+                        <p class="text-gray-700 leading-relaxed mb-6">
                             Streamline operations and boost efficiency with AI-driven automation. From repetitive tasks to complex decision-making, our solutions learn and adapt.
                         </p>
+                        <a href="#contact" class="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center">
+                            Learn More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
                     </div>
 
                     <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out border border-gray-200">
+                        <div class="text-4xl mb-4">📊</div>
                         <h3 class="text-2xl font-semibold text-gray-900 mb-4">Predictive Analytics</h3>
-                        <p class="text-gray-700 leading-relaxed">
+                        <p class="text-gray-700 leading-relaxed mb-6">
                             Leverage data to foresee trends, identify opportunities, and mitigate risks. Our AI models provide actionable insights for strategic growth.
                         </p>
+                        <a href="#contact" class="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center">
+                            Learn More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
                     </div>
 
                     <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out border border-gray-200">
+                        <div class="text-4xl mb-4">💬</div>
                         <h3 class="text-2xl font-semibold text-gray-900 mb-4">Natural Language Processing (NLP)</h3>
-                        <p class="text-gray-700 leading-relaxed">
+                        <p class="text-gray-700 leading-relaxed mb-6">
                             Unlock the power of human language. Our NLP solutions enable intelligent chatbots, sentiment analysis, and content generation.
                         </p>
+                        <a href="#contact" class="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center">
+                            Learn More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
                     </div>
 
                     <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out border border-gray-200">
+                        <div class="text-4xl mb-4">☁️</div>
                         <h3 class="text-2xl font-semibold text-gray-900 mb-4">Scalable Cloud Infrastructure</h3>
-                        <p class="text-gray-700 leading-relaxed">
+                        <p class="text-gray-700 leading-relaxed mb-6">
                             Build robust and scalable backend systems on leading cloud platforms. Ensure your applications perform flawlessly under any load.
                         </p>
+                        <a href="#contact" class="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center">
+                            Learn More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
                     </div>
 
                     <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out border border-gray-200">
+                        <div class="text-4xl mb-4">🔌</div>
                         <h3 class="text-2xl font-semibold text-gray-900 mb-4">API Development & Integration</h3>
-                        <p class="text-gray-700 leading-relaxed">
+                        <p class="text-gray-700 leading-relaxed mb-6">
                             Seamlessly connect your services and data with secure, efficient API development and integration services.
                         </p>
+                        <a href="#contact" class="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center">
+                            Learn More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
                     </div>
 
                     <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out border border-gray-200">
+                        <div class="text-4xl mb-4">🗄️</div>
                         <h3 class="text-2xl font-semibold text-gray-900 mb-4">Database Management</h3>
-                        <p class="text-gray-700 leading-relaxed">
+                        <p class="text-gray-700 leading-relaxed mb-6">
                             Expert design, implementation, and optimization of databases to ensure data integrity, security, and high performance.
                         </p>
+                        <a href="#contact" class="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center">
+                            Learn More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
                     </div>
 
+                    <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out border border-gray-200">
+                        <div class="text-4xl mb-4">🧠</div>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Agentic AI Systems</h3>
+                        <p class="text-gray-700 leading-relaxed mb-6">
+                            Deploy autonomous AI agents that reason, plan, and execute complex multi-step workflows across your enterprise systems. Our agentic AI solutions autonomously handle tasks, adapt to changing conditions, and orchestrate actions across platforms without constant human intervention.
+                        </p>
+                        <a href="#contact" class="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center">
+                            Learn More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section - Temporarily Hidden (Uncomment when you have real client testimonials) -->
+        <!--
+        <section id="testimonials" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6 md:px-12">
+                <h2 class="text-4xl font-bold text-center text-blue-600 mb-12">What Our Clients Say</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 text-2xl">★★★★★</div>
+                        </div>
+                        <p class="text-gray-700 mb-4 italic">"Your testimonial quote here..."</p>
+                        <p class="text-gray-900 font-semibold">— Client Name, Title<br>Company Name</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 text-2xl">★★★★★</div>
+                        </div>
+                        <p class="text-gray-700 mb-4 italic">"Your testimonial quote here..."</p>
+                        <p class="text-gray-900 font-semibold">— Client Name, Title<br>Company Name</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 text-2xl">★★★★★</div>
+                        </div>
+                        <p class="text-gray-700 mb-4 italic">"Your testimonial quote here..."</p>
+                        <p class="text-gray-900 font-semibold">— Client Name, Title<br>Company Name</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        -->
+
+        <section id="portfolio" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6 md:px-12">
+                <h2 class="text-4xl font-bold text-center text-blue-600 mb-12">Our Portfolio & Case Studies</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Portfolio items will be added here as projects are completed -->
+                    <div class="bg-gray-50 p-6 rounded-xl border-2 border-dashed border-gray-300 text-center">
+                        <div class="text-4xl mb-4">📁</div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-2">Case Studies Coming Soon</h3>
+                        <p class="text-gray-600 text-sm">We're working on showcasing our successful projects. Check back soon!</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -157,41 +287,152 @@
                     Our team is dedicated to pushing the boundaries of innovation, delivering solutions that are not just technically superior but also ethically sound and user-centric. We are committed to building a future where technology seamlessly integrates into our lives, empowering us to achieve more.
                 </p>
 
-                <div class="bg-white p-8 rounded-xl shadow-xl border border-gray-200 max-w-lg mx-auto">
-                    <img src="image_28073d.png" alt="Chirag Trivedi - CEO of Vyom Logic AI" class="w-48 h-48 rounded-full mx-auto mb-6 object-cover shadow-md border-4 border-blue-200" onerror="this.onerror=null; this.src='https://placehold.co/192x192/cccccc/333333?text=Image+Not+Found';">
-                    <h3 class="text-3xl font-bold text-gray-900 mb-2">Chirag Trivedi</h3>
-                    <p class="text-xl text-blue-600 font-semibold mb-4">CEO & Founder</p>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        Chirag Trivedi is a visionary leader and an expert in Large Language Models (LLM) and Natural Language Processing (NLP). His profound understanding of AI drives Vyom Logic AI's mission to deliver cutting-edge solutions that redefine human-technology interaction.
-                    </p>
+                <div class="bg-white p-8 rounded-xl shadow-xl border border-gray-200 max-w-2xl mx-auto mb-8">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+                        <div class="flex-shrink-0">
+                            <!-- Image Optimization Note: Consider compressing image_28073d.png using tools like TinyPNG or converting to WebP format for better performance -->
+                    <img src="image_28073d.png" alt="Chirag Trivedi - CEO & Founder of Vyom Logic AI" class="w-48 h-48 rounded-full object-cover shadow-lg border-4 border-blue-200" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/192x192/cccccc/333333?text=Image+Not+Found';">
+                        </div>
+                        <div class="text-center md:text-left flex-1">
+                            <h3 class="text-3xl font-bold text-gray-900 mb-2">Chirag Trivedi</h3>
+                            <p class="text-xl text-blue-600 font-semibold mb-3">CEO & Founder</p>
+                            <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                                Chirag Trivedi is a seasoned Data Science professional with over 10 years of hands-on experience in building Gen AI applications and leading AI initiatives. As a Technical Lead specializing in Agentic AI, he has architected enterprise solutions including intelligent chatbots, enterprise search systems, and autonomous AI agents. His expertise spans Large Language Models (LLM), Natural Language Processing (NLP), RAG (Retrieval-Augmented Generation), and cutting-edge Agentic AI technologies. With a proven track record of leading teams and delivering production-ready AI solutions at leading organizations, Chirag founded Vyom Logic AI to democratize advanced AI capabilities and help businesses transform through intelligent automation.
+                            </p>
+                            <div class="flex justify-center md:justify-start gap-4 mt-4">
+                                <a href="https://www.linkedin.com/in/chirag-trivedi-48441441/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 transition transform hover:scale-110" aria-label="Connect with Chirag Trivedi on LinkedIn">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+                    Work With Us
+                </a>
             </div>
         </section>
 
         <section id="contact" class="py-16 md:py-24 bg-gray-100">
-            <div class="container mx-auto px-6 md:px-12 text-center">
-                <h2 class="text-4xl font-bold text-blue-600 mb-8">Get In Touch</h2>
-                <p class="text-lg text-gray-800 leading-relaxed max-w-2xl mx-auto mb-8">
+            <div class="container mx-auto px-6 md:px-12">
+                <h2 class="text-4xl font-bold text-center text-blue-600 mb-8">Get In Touch</h2>
+                <p class="text-lg text-gray-800 leading-relaxed max-w-2xl mx-auto mb-12 text-center">
                     Interested in collaborating or learning more about how Vyom Logic AI can elevate your business? We'd love to hear from you.
                 </p>
-                <div class="bg-white p-8 rounded-xl shadow-xl inline-block border border-gray-200">
-                    <p class="text-xl font-semibold text-gray-900 mb-4">Email Us Directly:</p>
-                    <a href="mailto:info@vyomlogic.ai" class="text-blue-600 hover:text-blue-500 text-2xl font-bold transition duration-300 ease-in-out block rounded-lg p-2">
-                        info@vyomlogic.ai
-                    </a>
-                    <p class="text-sm text-gray-600 mt-4">
-                        (Please replace with your actual company email address)
-                    </p>
+                <div class="max-w-2xl mx-auto grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-xl border border-gray-200">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Contact Form</h3>
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone (Optional)</label>
+                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Company (Optional)</label>
+                                <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                                <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+                                Send Message
+                            </button>
+                        </form>
+                        <div id="form-message" class="mt-4 hidden"></div>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-xl border border-gray-200">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-sm font-semibold text-gray-700 mb-2">Email</p>
+                                <a href="mailto:business@vyomlogic.ai" class="text-blue-600 hover:text-blue-700 text-lg font-medium">
+                                    business@vyomlogic.ai
+                                </a>
+                            </div>
+                            <div class="pt-4 border-t border-gray-200">
+                                <p class="text-sm font-semibold text-gray-700 mb-2">Phone</p>
+                                <a href="tel:+917405107065" class="text-blue-600 hover:text-blue-700 text-lg font-medium">
+                                    +91-7405107065
+                                </a>
+                            </div>
+                            <div class="pt-4 border-t border-gray-200">
+                                <p class="text-sm font-semibold text-gray-700 mb-2">Response Time</p>
+                                <p class="text-gray-600">We typically respond within 24 hours</p>
+                            </div>
+                            <div class="pt-4 border-t border-gray-200">
+                                <p class="text-sm font-semibold text-gray-700 mb-2">Availability</p>
+                                <p class="text-gray-600">Monday - Friday: 9 AM - 6 PM</p>
+                                <p class="text-gray-600">Global timezone support available</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
     </main>
 
+    <!-- Floating CTA Button -->
+    <div id="floating-cta" class="fixed bottom-6 right-6 z-50 hidden md:block">
+        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-full shadow-2xl transform hover:scale-110 transition duration-300 ease-in-out flex items-center gap-2 animate-bounce">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+            Get Quote
+        </a>
+    </div>
+
     <footer class="bg-white py-8 px-6 md:px-12 text-center text-gray-600 rounded-t-xl border-t border-gray-200">
         <div class="container mx-auto">
-            <p>&copy; 2025 Vyom Logic AI. All rights reserved.</p>
-            <p class="mt-2">Innovating for a better future, one solution at a time.</p>
+            <div class="grid md:grid-cols-3 gap-8 mb-8 text-left">
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-4">Vyom Logic AI</h4>
+                    <p class="text-sm">Delivering cutting-edge AI and backend solutions to empower businesses globally.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="hover:text-blue-600 transition">Home</a></li>
+                        <li><a href="#solutions" class="hover:text-blue-600 transition">Solutions</a></li>
+                        <li><a href="#portfolio" class="hover:text-blue-600 transition">Portfolio</a></li>
+                        <li><a href="#about" class="hover:text-blue-600 transition">About Us</a></li>
+                        <li><a href="#contact" class="hover:text-blue-600 transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-4">Connect With Us</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://www.linkedin.com/in/chirag-trivedi-48441441/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 transition inline-flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            LinkedIn
+                        </a></li>
+                        <li><a href="mailto:business@vyomlogic.ai" class="hover:text-blue-600 transition">Email Us</a></li>
+                        <li><a href="tel:+917405107065" class="hover:text-blue-600 transition">+91-7405107065</a></li>
+                    </ul>
+                    <div class="mt-4">
+                        <h5 class="font-semibold text-gray-900 mb-2 text-sm">Newsletter</h5>
+                        <form id="newsletter-form" class="flex gap-2">
+                            <input type="email" placeholder="Your email" required class="flex-1 px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-6">
+                <p>&copy; <span id="copyright-year">2025</span> Vyom Logic AI. All rights reserved.</p>
+                <p class="mt-2">Innovating for a better future, one solution at a time.</p>
+                <div class="mt-4 flex justify-center gap-6 text-sm">
+                    <a href="privacy-policy.html" class="hover:text-blue-600 transition">Privacy Policy</a>
+                    <a href="terms-of-service.html" class="hover:text-blue-600 transition">Terms of Service</a>
+                </div>
+            </div>
         </div>
     </footer>
 
@@ -199,9 +440,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-            const generateSolutionImagesBtn = document.getElementById('generate-solution-images-btn');
-            const solutionImagesGrid = document.getElementById('solution-images-grid');
-            const solutionsSpinner = document.getElementById('solutions-spinner');
 
             // Toggle mobile menu visibility
             mobileMenuButton.addEventListener('click', () => {
@@ -217,109 +455,256 @@
                 });
             });
 
-            /**
-             * Generates an AI image using the Imagen API and displays it.
-             * @param {string} prompt - The text prompt for image generation.
-             * @param {HTMLElement} containerElement - The DOM element where the image will be appended.
-             * @param {HTMLElement} spinnerElement - The spinner element to show/hide.
-             * @param {boolean} clearContainer - Whether to clear the container before adding new images.
-             */
-            async function generateImage(prompt, containerElement, spinnerElement, clearContainer = true) {
-                // Show spinner and disable button
-                spinnerElement.classList.remove('hidden');
-                // Disable the button that triggered this generation
-                const triggeringButton = spinnerElement.parentElement;
-                if (triggeringButton && triggeringButton.tagName === 'BUTTON') {
-                    triggeringButton.disabled = true;
-                    triggeringButton.classList.add('opacity-50', 'cursor-not-allowed');
-                }
-
-                if (clearContainer) {
-                    containerElement.innerHTML = ''; // Clear previous images
-                }
-
-                try {
-                    const payload = { instances: { prompt: prompt }, parameters: { "sampleCount": 1 } };
-                    // API key is handled by the Canvas environment for imagen-3.0-generate-002
-                    const apiKey = "";
-                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${apiKey}`;
-
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (!response.ok) {
-                        const errorData = await response.json();
-                        console.error('API Error:', errorData);
-                        throw new Error(`Image generation failed: ${response.statusText} - ${errorData.error?.message || 'Unknown error'}`);
+            // Contact form handler
+            const contactForm = document.getElementById('contact-form');
+            const formMessage = document.getElementById('form-message');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const formData = new FormData(contactForm);
+                    const data = Object.fromEntries(formData);
+                    
+                    // Show loading state
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+                    
+                    // Clear any previous message classes
+                    formMessage.classList.remove('hidden', 'bg-green-100', 'bg-red-100', 'bg-yellow-100', 'border-green-400', 'border-red-400', 'border-yellow-400', 'text-green-700', 'text-red-700', 'text-yellow-700');
+                    
+                    // Form validation (prevents abuse and invalid submissions)
+                    if (!data.name || !data.name.trim() || data.name.length < 2) {
+                        formMessage.className = 'mt-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded';
+                        formMessage.textContent = 'Please enter a valid name (at least 2 characters).';
+                        formMessage.classList.remove('hidden');
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                        return;
                     }
-
-                    const result = await response.json();
-
-                    if (result.predictions && result.predictions.length > 0 && result.predictions[0].bytesBase64Encoded) {
-                        const imageUrl = `data:image/png;base64,${result.predictions[0].bytesBase64Encoded}`;
-                        const imgElement = document.createElement('img');
-                        imgElement.src = imageUrl;
-                        imgElement.alt = prompt;
-                        // Updated Tailwind classes for styling on light background
-                        imgElement.classList.add('w-full', 'h-auto', 'object-cover', 'rounded-xl', 'shadow-lg', 'border', 'border-gray-300');
-                        imgElement.style.maxHeight = '400px';
-                        imgElement.style.minHeight = '200px';
-                        imgElement.style.width = '100%';
-                        imgElement.style.maxWidth = '800px';
-                        imgElement.style.margin = '0 auto';
-
-                        containerElement.appendChild(imgElement);
+                    
+                    if (!data.email || !data.email.includes('@') || !data.email.includes('.')) {
+                        formMessage.className = 'mt-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded';
+                        formMessage.textContent = 'Please enter a valid email address.';
+                        formMessage.classList.remove('hidden');
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                        return;
+                    }
+                    
+                    if (!data.message || !data.message.trim() || data.message.length < 10) {
+                        formMessage.className = 'mt-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded';
+                        formMessage.textContent = 'Please enter a message (at least 10 characters).';
+                        formMessage.classList.remove('hidden');
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                        return;
+                    }
+                    
+                    // Contact Form Backend Integration - EmailJS (200 emails/month free!)
+                    // EmailJS Free Tier: 200 emails/month (vs Formspree's 50/month)
+                    // 
+                    // SETUP INSTRUCTIONS:
+                    // STEP 1: Go to https://www.emailjs.com and sign up (free)
+                    // STEP 2: Add Email Service - Choose ONE option:
+                    //         Option A: Gmail API (if you get 412 error, use Option B instead)
+                    //         Option B: Gmail SMTP (Recommended - more reliable)
+                    //           - Host: smtp.gmail.com, Port: 587, Security: TLS
+                    //           - Use App Password: https://myaccount.google.com/apppasswords
+                    // STEP 3: Create Email Template - Get Template ID
+                    // STEP 4: Get Public Key from Account Settings
+                    // STEP 5: Replace the IDs below and uncomment the EmailJS script tag in <head>
+                    //
+                    // TROUBLESHOOTING Gmail API Error 412:
+                    // - Re-authorize Gmail and ensure "Send email on your behalf" permission is granted
+                    // - OR switch to SMTP method (more reliable, see Option B above)
+                    
+                    // Load EmailJS SDK (add this script tag in <head> section):
+                    // <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></scr' + 'ipt>
+                    // Then initialize: emailjs.init('YOUR_PUBLIC_KEY');
+                    
+                    // SECURITY: EmailJS Public Key is visible (by design for client-side use)
+                    // PROTECTION MEASURES:
+                    // 1. Configure EmailJS Domain Restrictions: EmailJS Dashboard > Account Settings > Security
+                    //    - Add "vyomlogic.ai" and "*.github.io" to allowed domains
+                    //    - This prevents unauthorized domains from using your credentials
+                    // 2. EmailJS has built-in rate limiting (200 emails/month free tier)
+                    // 3. Monitor usage in EmailJS Dashboard > Usage
+                    // 4. For stronger security, consider a serverless function proxy (see comments below)
+                    
+                    // Domain validation (additional client-side check)
+                    const allowedDomains = ['vyomlogic.ai', 'github.io'];
+                    const currentDomain = window.location.hostname;
+                    const isAllowedDomain = allowedDomains.some(domain => currentDomain.includes(domain));
+                    
+                    if (!isAllowedDomain && !currentDomain.includes('localhost') && !currentDomain.includes('127.0.0.1')) {
+                        formMessage.className = 'mt-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded';
+                        formMessage.textContent = 'Form submission is only allowed from authorized domains.';
+                        formMessage.classList.remove('hidden');
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                        return;
+                    }
+                    
+                    // Client-side rate limiting (prevents rapid-fire submissions)
+                    const lastSubmissionTime = sessionStorage.getItem('lastFormSubmission');
+                    const currentTime = Date.now();
+                    if (lastSubmissionTime && (currentTime - parseInt(lastSubmissionTime)) < 10000) {
+                        formMessage.classList.remove('hidden', 'bg-green-100', 'bg-red-100', 'bg-yellow-100', 'border-green-400', 'border-red-400', 'border-yellow-400', 'text-green-700', 'text-red-700', 'text-yellow-700');
+                        formMessage.className = 'mt-4 bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded';
+                        formMessage.textContent = 'Please wait a few seconds before submitting again.';
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                        return;
+                    }
+                    
+                    // Set rate limit timestamp BEFORE attempting to send (prevents bypass via failed requests)
+                    sessionStorage.setItem('lastFormSubmission', currentTime.toString());
+                    
+                    // ALTERNATIVE: Serverless Function Proxy (More Secure)
+                    // For GitHub Pages, you can use GitHub Actions or migrate to Netlify/Vercel
+                    // Example: Create .github/workflows/form-handler.yml
+                    // This would hide credentials server-side, but requires more setup
+                    
+                    if (typeof emailjs !== 'undefined') {
+                        // Note: emailjs.init() is already called in <head>, so no need to pass public key again
+                        // The fourth parameter (if needed) should be an options object, not a public key string
+                        emailjs.send('service_qgyoloe', 'template_w2tui6o', {
+                            from_name: data.name,
+                            from_email: data.email,
+                            phone: data.phone || 'Not provided',
+                            company: data.company || 'Not provided',
+                            message: data.message,
+                            to_email: 'business@vyomlogic.ai'
+                        })
+                        .then(() => {
+                            // Clear previous classes and set success state
+                            formMessage.classList.remove('hidden', 'bg-green-100', 'bg-red-100', 'bg-yellow-100', 'border-green-400', 'border-red-400', 'border-yellow-400', 'text-green-700', 'text-red-700', 'text-yellow-700');
+                            formMessage.className = 'mt-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded';
+                            formMessage.textContent = 'Thank you! We\'ll get back to you within 24 hours.';
+                            contactForm.reset();
+                        })
+                        .catch((error) => {
+                            console.error('EmailJS error:', error);
+                            // Clear previous classes and set error state
+                            formMessage.classList.remove('hidden', 'bg-green-100', 'bg-red-100', 'bg-yellow-100', 'border-green-400', 'border-red-400', 'border-yellow-400', 'text-green-700', 'text-red-700', 'text-yellow-700');
+                            formMessage.className = 'mt-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded';
+                            formMessage.textContent = 'Sorry, there was an error. Please try again or email us directly at business@vyomlogic.ai';
+                        })
+                        .finally(() => {
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = originalText;
+                        });
                     } else {
-                        console.warn('No image data found in the response.');
-                        containerElement.innerHTML = '<p class="text-red-600">Failed to generate image. Please try again.</p>'; // Darker error text
+                        // Fallback if EmailJS is not loaded yet
+                        console.error('EmailJS SDK not loaded. Please add the script tag and initialize EmailJS.');
+                        // Clear previous classes and set warning state
+                        formMessage.classList.remove('hidden', 'bg-green-100', 'bg-red-100', 'bg-yellow-100', 'border-green-400', 'border-red-400', 'border-yellow-400', 'text-green-700', 'text-red-700', 'text-yellow-700');
+                        formMessage.className = 'mt-4 bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded';
+                        formMessage.textContent = 'EmailJS not configured. Please contact us directly at business@vyomlogic.ai';
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
                     }
-                } catch (error) {
-                    console.error('Error generating image:', error);
-                    containerElement.innerHTML = `<p class="text-red-600">Error: ${error.message}. Check console for details.</p>`; // Darker error text
-                } finally {
-                    // Hide spinner and enable button
-                    spinnerElement.classList.add('hidden');
-                    const triggeringButton = spinnerElement.parentElement;
-                    if (triggeringButton && triggeringButton.tagName === 'BUTTON') {
-                        triggeringButton.disabled = false;
-                        triggeringButton.classList.remove('opacity-50', 'cursor-not-allowed');
+                    
+                    // Alternative: Formspree Integration (50 emails/month free)
+                    /*
+                    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORMSPREE_ID';
+                    try {
+                        const response = await fetch(FORMSPREE_ENDPOINT, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Accept': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                name: data.name,
+                                email: data.email,
+                                phone: data.phone || 'Not provided',
+                                company: data.company || 'Not provided',
+                                message: data.message
+                            })
+                        });
+                        
+                        if (response.ok) {
+                            formMessage.classList.remove('hidden');
+                            formMessage.classList.add('bg-green-100', 'border', 'border-green-400', 'text-green-700', 'px-4', 'py-3', 'rounded');
+                            formMessage.textContent = 'Thank you! We\'ll get back to you within 24 hours.';
+                            contactForm.reset();
+                        } else {
+                            throw new Error('Form submission failed');
+                        }
+                    } catch (error) {
+                        console.error('Form submission error:', error);
+                        formMessage.classList.remove('hidden');
+                        formMessage.classList.add('bg-red-100', 'border', 'border-red-400', 'text-red-700', 'px-4', 'py-3', 'rounded');
+                        formMessage.textContent = 'Sorry, there was an error. Please try again or email us directly.';
+                    } finally {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
                     }
-                }
+                    */
+                });
             }
 
-            // Event listener for Solution Images generation
-            generateSolutionImagesBtn.addEventListener('click', async () => {
-                const solutionPrompts = [
-                    "abstract representation of intelligent automation, gears and circuits, digital art, vibrant colors",
-                    "data visualization for predictive analytics, glowing charts and graphs, futuristic interface",
-                    "natural language processing interface, text bubbles and AI brain, clean design, conceptual",
-                    "scalable cloud infrastructure, interconnected servers, abstract network, secure data flow",
-                    "API development and integration, glowing data flow between software modules",
-                    "secure database management, abstract data fortress, digital security, cyber protection"
-                ];
-
-                solutionImagesGrid.innerHTML = ''; // Clear previous images
-                solutionsSpinner.classList.remove('hidden');
-                generateSolutionImagesBtn.disabled = true;
-                generateSolutionImagesBtn.classList.add('opacity-50', 'cursor-not-allowed');
-
-                try {
-                    for (const prompt of solutionPrompts) {
-                        // Generate each image one by one, appending to the grid
-                        await generateImage(prompt, solutionImagesGrid, solutionsSpinner, false); // Don't clear container for each
+            // Show floating CTA after scrolling
+            let floatingCTA = document.getElementById('floating-cta');
+            if (floatingCTA) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 500) {
+                        floatingCTA.classList.remove('hidden');
+                    } else {
+                        floatingCTA.classList.add('hidden');
                     }
-                } catch (error) {
-                    console.error('Error generating multiple solution images:', error);
-                    solutionImagesGrid.innerHTML += `<p class="text-red-600 col-span-full">Error generating some images: ${error.message}.</p>`;
-                } finally {
-                    solutionsSpinner.classList.add('hidden');
-                    generateSolutionImagesBtn.disabled = false;
-                    generateSolutionImagesBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-                }
-            });
+                });
+            }
+
+            // Set dynamic copyright year
+            const copyrightYear = document.getElementById('copyright-year');
+            if (copyrightYear) {
+                copyrightYear.textContent = new Date().getFullYear();
+            }
+
+            // Newsletter form handler
+            const newsletterForm = document.getElementById('newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const emailInput = newsletterForm.querySelector('input[type="email"]');
+                    const email = emailInput.value;
+                    
+                    // Integrate with your email marketing service (Mailchimp, ConvertKit, etc.)
+                    // Example: Add to your email list via API
+                    console.log('Newsletter subscription:', email);
+                    
+                    // Show success message
+                    const button = newsletterForm.querySelector('button');
+                    const originalText = button.textContent;
+                    button.textContent = 'Subscribed!';
+                    button.classList.add('bg-green-600');
+                    emailInput.value = '';
+                    
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                        button.classList.remove('bg-green-600');
+                    }, 2000);
+                });
+            }
+
+            // Live Chat Widget Integration (Optional)
+            // Uncomment and configure when ready:
+            /*
+            // Tawk.to example:
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+                var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+                s1.async=true;
+                s1.src='https://embed.tawk.to/YOUR_PROPERTY_ID/YOUR_WIDGET_ID';
+                s1.charset='UTF-8';
+                s1.setAttribute('crossorigin','*');
+                s0.parentNode.insertBefore(s1,s0);
+            })();
+            */
         });
     </script>
 </body>
