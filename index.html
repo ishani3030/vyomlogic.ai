@@ -471,6 +471,37 @@
                     submitBtn.disabled = true;
                     submitBtn.textContent = 'Sending...';
                     
+                    // Clear any previous message classes
+                    formMessage.classList.remove('hidden', 'bg-green-100', 'bg-red-100', 'bg-yellow-100', 'border-green-400', 'border-red-400', 'border-yellow-400', 'text-green-700', 'text-red-700', 'text-yellow-700');
+                    
+                    // Form validation (prevents abuse and invalid submissions)
+                    if (!data.name || !data.name.trim() || data.name.length < 2) {
+                        formMessage.className = 'mt-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded';
+                        formMessage.textContent = 'Please enter a valid name (at least 2 characters).';
+                        formMessage.classList.remove('hidden');
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                        return;
+                    }
+                    
+                    if (!data.email || !data.email.includes('@') || !data.email.includes('.')) {
+                        formMessage.className = 'mt-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded';
+                        formMessage.textContent = 'Please enter a valid email address.';
+                        formMessage.classList.remove('hidden');
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                        return;
+                    }
+                    
+                    if (!data.message || !data.message.trim() || data.message.length < 10) {
+                        formMessage.className = 'mt-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded';
+                        formMessage.textContent = 'Please enter a message (at least 10 characters).';
+                        formMessage.classList.remove('hidden');
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                        return;
+                    }
+                    
                     // Contact Form Backend Integration - EmailJS (200 emails/month free!)
                     // EmailJS Free Tier: 200 emails/month (vs Formspree's 50/month)
                     // 
@@ -490,10 +521,55 @@
                     // - OR switch to SMTP method (more reliable, see Option B above)
                     
                     // Load EmailJS SDK (add this script tag in <head> section):
-                    // <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+                    // <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></scr' + 'ipt>
                     // Then initialize: emailjs.init('YOUR_PUBLIC_KEY');
                     
+                    // SECURITY: EmailJS Public Key is visible (by design for client-side use)
+                    // PROTECTION MEASURES:
+                    // 1. Configure EmailJS Domain Restrictions: EmailJS Dashboard > Account Settings > Security
+                    //    - Add "vyomlogic.ai" and "*.github.io" to allowed domains
+                    //    - This prevents unauthorized domains from using your credentials
+                    // 2. EmailJS has built-in rate limiting (200 emails/month free tier)
+                    // 3. Monitor usage in EmailJS Dashboard > Usage
+                    // 4. For stronger security, consider a serverless function proxy (see comments below)
+                    
+                    // Domain validation (additional client-side check)
+                    const allowedDomains = ['vyomlogic.ai', 'github.io'];
+                    const currentDomain = window.location.hostname;
+                    const isAllowedDomain = allowedDomains.some(domain => currentDomain.includes(domain));
+                    
+                    if (!isAllowedDomain && !currentDomain.includes('localhost') && !currentDomain.includes('127.0.0.1')) {
+                        formMessage.className = 'mt-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded';
+                        formMessage.textContent = 'Form submission is only allowed from authorized domains.';
+                        formMessage.classList.remove('hidden');
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                        return;
+                    }
+                    
+                    // Client-side rate limiting (prevents rapid-fire submissions)
+                    const lastSubmissionTime = sessionStorage.getItem('lastFormSubmission');
+                    const currentTime = Date.now();
+                    if (lastSubmissionTime && (currentTime - parseInt(lastSubmissionTime)) < 10000) {
+                        formMessage.classList.remove('hidden', 'bg-green-100', 'bg-red-100', 'bg-yellow-100', 'border-green-400', 'border-red-400', 'border-yellow-400', 'text-green-700', 'text-red-700', 'text-yellow-700');
+                        formMessage.className = 'mt-4 bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded';
+                        formMessage.textContent = 'Please wait a few seconds before submitting again.';
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                        return;
+                    }
+                    
+                    // Set rate limit timestamp BEFORE attempting to send (prevents bypass via failed requests)
+                    sessionStorage.setItem('lastFormSubmission', currentTime.toString());
+                    
+                    // ALTERNATIVE: Serverless Function Proxy (More Secure)
+                    // For GitHub Pages, you can use GitHub Actions or migrate to Netlify/Vercel
+                    // Example: Create .github/workflows/form-handler.yml
+                    // This would hide credentials server-side, but requires more setup
+                    
                     if (typeof emailjs !== 'undefined') {
+                        // Note: emailjs.init() is already called in <head>, so no need to pass public key again
+                        // The fourth parameter (if needed) should be an options object, not a public key string
                         emailjs.send('service_qgyoloe', 'template_w2tui6o', {
                             from_name: data.name,
                             from_email: data.email,
@@ -501,17 +577,19 @@
                             company: data.company || 'Not provided',
                             message: data.message,
                             to_email: 'business@vyomlogic.ai'
-                        }, '9zr9UvCzrDoWIx36c')
+                        })
                         .then(() => {
-                            formMessage.classList.remove('hidden');
-                            formMessage.classList.add('bg-green-100', 'border', 'border-green-400', 'text-green-700', 'px-4', 'py-3', 'rounded');
+                            // Clear previous classes and set success state
+                            formMessage.classList.remove('hidden', 'bg-green-100', 'bg-red-100', 'bg-yellow-100', 'border-green-400', 'border-red-400', 'border-yellow-400', 'text-green-700', 'text-red-700', 'text-yellow-700');
+                            formMessage.className = 'mt-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded';
                             formMessage.textContent = 'Thank you! We\'ll get back to you within 24 hours.';
                             contactForm.reset();
                         })
                         .catch((error) => {
                             console.error('EmailJS error:', error);
-                            formMessage.classList.remove('hidden');
-                            formMessage.classList.add('bg-red-100', 'border', 'border-red-400', 'text-red-700', 'px-4', 'py-3', 'rounded');
+                            // Clear previous classes and set error state
+                            formMessage.classList.remove('hidden', 'bg-green-100', 'bg-red-100', 'bg-yellow-100', 'border-green-400', 'border-red-400', 'border-yellow-400', 'text-green-700', 'text-red-700', 'text-yellow-700');
+                            formMessage.className = 'mt-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded';
                             formMessage.textContent = 'Sorry, there was an error. Please try again or email us directly at business@vyomlogic.ai';
                         })
                         .finally(() => {
@@ -521,8 +599,9 @@
                     } else {
                         // Fallback if EmailJS is not loaded yet
                         console.error('EmailJS SDK not loaded. Please add the script tag and initialize EmailJS.');
-                        formMessage.classList.remove('hidden');
-                        formMessage.classList.add('bg-yellow-100', 'border', 'border-yellow-400', 'text-yellow-700', 'px-4', 'py-3', 'rounded');
+                        // Clear previous classes and set warning state
+                        formMessage.classList.remove('hidden', 'bg-green-100', 'bg-red-100', 'bg-yellow-100', 'border-green-400', 'border-red-400', 'border-yellow-400', 'text-green-700', 'text-red-700', 'text-yellow-700');
+                        formMessage.className = 'mt-4 bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded';
                         formMessage.textContent = 'EmailJS not configured. Please contact us directly at business@vyomlogic.ai';
                         submitBtn.disabled = false;
                         submitBtn.textContent = originalText;
