@@ -558,9 +558,9 @@
 
                 <!-- Healthcare Tab Content -->
                 <div id="tab-healthcare" class="tab-content active">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto items-stretch">
                         <!-- Dental Chatbot Card -->
-                        <div class="solution-card bg-white hover:card-gradient-hover p-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out border border-gray-200">
+                        <div class="solution-card bg-white hover:card-gradient-hover p-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out border border-gray-200 flex flex-col">
                             <div class="flex items-start justify-between mb-4">
                                 <span class="delivered-badge">
                                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -647,8 +647,118 @@
                                 </div>
                             </div>
 
-                            <div class="flex flex-col sm:flex-row gap-3">
+                            <div class="flex flex-col sm:flex-row gap-3 mt-auto">
                                 <button class="btn-gradient text-white font-bold py-3 px-6 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-75 flex-1" id="watch-demo-btn">
+                                    Watch Demo Video
+                                </button>
+                                <a href="#contact" class="inline-block bg-white hover:bg-gray-50 text-blue-600 font-bold py-3 px-6 rounded-lg shadow-lg border-2 border-blue-600 text-center transition duration-300 ease-in-out flex-1">
+                                    Request Similar Solution
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Radiology AI Platform Card -->
+                        <div class="solution-card bg-white hover:card-gradient-hover p-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out border border-gray-200 flex flex-col">
+                            <div class="flex items-start justify-between mb-4">
+                                <span class="delivered-badge">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Delivered Project
+                                </span>
+                            </div>
+                            
+                            <!-- Video Thumbnail -->
+                            <div class="video-thumbnail mb-6" id="radiology-video-thumbnail">
+                                <div class="play-overlay">
+                                    <div class="play-button">
+                                        <svg class="w-8 h-8 text-blue-600 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="absolute inset-0 flex items-center justify-center text-white text-sm font-semibold">
+                                    <div class="text-center">
+                                        <svg class="w-16 h-16 mx-auto mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
+                                        </svg>
+                                        <p>Video Demo</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-2">Radiology AI Platform</h3>
+                            <p class="text-gray-600 mb-4 italic">Voice-to-report conversion with proprietary radiology domain models</p>
+                            
+                            <p class="text-gray-700 leading-relaxed mb-6">
+                                Successfully delivered an AI-powered radiology platform featuring proprietary custom-trained models specifically fine-tuned for radiology domain. The platform converts natural speech into structured radiology reports using advanced LangGraph workflows, detects critical findings automatically, and provides intelligent workflow management. Built on HIPAA-compliant GCP architecture with real-time processing capabilities.
+                            </p>
+
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-900 mb-3">Key Features:</h4>
+                                <ul class="space-y-2 text-sm text-gray-700">
+                                    <li class="flex items-start gap-2">
+                                        <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>Proprietary custom-trained radiology domain models</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>Real-time voice-to-report conversion</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>LangGraph workflow orchestration</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>Critical findings detection & alerts</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>Prior study comparison & integration</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>HIPAA-compliant architecture</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="mb-6 p-4 bg-green-50 rounded-lg border border-green-200">
+                                <h4 class="text-sm font-semibold text-gray-900 mb-2">Results Delivered:</h4>
+                                <ul class="space-y-1 text-sm text-gray-700">
+                                    <li>• Reduced report turnaround time by 60%</li>
+                                    <li>• Improved accuracy with domain-specific models</li>
+                                    <li>• Enhanced workflow efficiency</li>
+                                </ul>
+                            </div>
+
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-900 mb-2">Technologies:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-badge">LangGraph</span>
+                                    <span class="tech-badge">Vertex AI</span>
+                                    <span class="tech-badge">FastAPI</span>
+                                    <span class="tech-badge">React</span>
+                                    <span class="tech-badge">TypeScript</span>
+                                    <span class="tech-badge">GCP Cloud Run</span>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col sm:flex-row gap-3 mt-auto">
+                                <button class="btn-gradient text-white font-bold py-3 px-6 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-75 flex-1" id="watch-radiology-demo-btn">
                                     Watch Demo Video
                                 </button>
                                 <a href="#contact" class="inline-block bg-white hover:bg-gray-50 text-blue-600 font-bold py-3 px-6 rounded-lg shadow-lg border-2 border-blue-600 text-center transition duration-300 ease-in-out flex-1">
@@ -1194,24 +1304,27 @@
             // Video Modal Functionality
             const videoModal = document.getElementById('video-modal');
             const modalCloseBtn = document.getElementById('modal-close-btn');
-            const videoThumbnail = document.getElementById('dental-video-thumbnail');
+            const dentalVideoThumbnail = document.getElementById('dental-video-thumbnail');
             const watchDemoBtn = document.getElementById('watch-demo-btn');
+            const radiologyVideoThumbnail = document.getElementById('radiology-video-thumbnail');
+            const watchRadiologyDemoBtn = document.getElementById('watch-radiology-demo-btn');
             const videoIframe = document.getElementById('video-iframe');
             const videoPlaceholder = document.getElementById('video-placeholder');
             
-            // Video URL placeholder - Replace with actual YouTube/Vimeo embed URL
+            // Video URL placeholders - Replace with actual YouTube/Vimeo embed URLs
             // Example YouTube: https://www.youtube.com/embed/VIDEO_ID
             // Example Vimeo: https://player.vimeo.com/video/VIDEO_ID
-            const VIDEO_URL = ''; // Add your video URL here
+            const DENTAL_VIDEO_URL = ''; // Add dental chatbot video URL here
+            const RADIOLOGY_VIDEO_URL = ''; // Add radiology platform video URL here
 
-            function openVideoModal() {
+            function openVideoModal(videoUrl) {
                 if (videoModal) {
                     videoModal.classList.add('active');
                     document.body.style.overflow = 'hidden';
                     
                     // If video URL is provided, load it
-                    if (VIDEO_URL) {
-                        videoIframe.src = VIDEO_URL;
+                    if (videoUrl) {
+                        videoIframe.src = videoUrl;
                         videoIframe.style.display = 'block';
                         videoPlaceholder.style.display = 'none';
                     } else {
@@ -1232,12 +1345,20 @@
                 }
             }
 
-            // Open modal triggers
-            if (videoThumbnail) {
-                videoThumbnail.addEventListener('click', openVideoModal);
+            // Open modal triggers for Dental Chatbot
+            if (dentalVideoThumbnail) {
+                dentalVideoThumbnail.addEventListener('click', () => openVideoModal(DENTAL_VIDEO_URL));
             }
             if (watchDemoBtn) {
-                watchDemoBtn.addEventListener('click', openVideoModal);
+                watchDemoBtn.addEventListener('click', () => openVideoModal(DENTAL_VIDEO_URL));
+            }
+
+            // Open modal triggers for Radiology Platform
+            if (radiologyVideoThumbnail) {
+                radiologyVideoThumbnail.addEventListener('click', () => openVideoModal(RADIOLOGY_VIDEO_URL));
+            }
+            if (watchRadiologyDemoBtn) {
+                watchRadiologyDemoBtn.addEventListener('click', () => openVideoModal(RADIOLOGY_VIDEO_URL));
             }
 
             // Close modal triggers
