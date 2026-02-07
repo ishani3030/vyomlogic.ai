@@ -145,6 +145,173 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
         }
+        /* Tab button styles */
+        .tab-button {
+            transition: all 0.3s ease-in-out;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .tab-button-active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .tab-button-inactive {
+            background: white;
+            color: #667eea;
+            border: 2px solid transparent;
+        }
+        .tab-button-inactive:hover {
+            border-color: rgba(102, 126, 234, 0.3);
+            background: #f7fafc;
+        }
+        /* Tab content */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Delivered badge */
+        .delivered-badge {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 0.375rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+        }
+        /* Video thumbnail */
+        .video-thumbnail {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            aspect-ratio: 16 / 9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .video-thumbnail:hover .play-overlay {
+            transform: scale(1.1);
+        }
+        .play-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        .play-button {
+            width: 4rem;
+            height: 4rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .play-button:hover {
+            background: white;
+            transform: scale(1.1);
+        }
+        /* Modal styles */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-container {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            max-width: 90vw;
+            max-height: 90vh;
+            width: 900px;
+            position: relative;
+            animation: slideUp 0.3s ease-in-out;
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0, 0, 0, 0.1);
+            border: none;
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .modal-close:hover {
+            background: rgba(0, 0, 0, 0.2);
+        }
+        .video-embed {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 0.5rem;
+        }
+        /* Coming soon card */
+        .coming-soon-card {
+            background: #f3f4f6;
+            border: 2px dashed #d1d5db;
+            border-radius: 0.75rem;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        /* Technology badges */
+        .tech-badge {
+            display: inline-block;
+            background: #f3f4f6;
+            color: #374151;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+        /* Hide scrollbar for tab navigation */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        /* Responsive modal adjustments */
+        @media (max-width: 768px) {
+            .modal-container {
+                width: 95vw;
+                padding: 1rem;
+            }
+            .video-embed {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800 antialiased">
@@ -166,7 +333,7 @@
             <nav class="hidden md:flex space-x-8">
                 <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 ease-in-out rounded-lg p-2">Home</a>
                 <a href="#solutions" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 ease-in-out rounded-lg p-2">Solutions</a>
-                <a href="#portfolio" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 ease-in-out rounded-lg p-2">Portfolio</a>
+                <a href="#industry-solutions" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 ease-in-out rounded-lg p-2">Industry Solutions</a>
                 <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 ease-in-out rounded-lg p-2">About Us</a>
                 <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 ease-in-out rounded-lg p-2">Contact</a>
             </nav>
@@ -175,7 +342,7 @@
         <nav id="mobile-menu" class="md:hidden mt-4 space-y-4 text-center bg-gray-50 rounded-lg py-4 hidden border-t border-gray-200">
             <a href="#home" class="block text-gray-700 hover:text-blue-600 font-medium py-2 rounded-md transition duration-300 ease-in-out">Home</a>
             <a href="#solutions" class="block text-gray-700 hover:text-blue-600 font-medium py-2 rounded-md transition duration-300 ease-in-out">Solutions</a>
-            <a href="#portfolio" class="block text-gray-700 hover:text-blue-600 font-medium py-2 rounded-md transition duration-300 ease-in-out">Portfolio</a>
+            <a href="#industry-solutions" class="block text-gray-700 hover:text-blue-600 font-medium py-2 rounded-md transition duration-300 ease-in-out">Industry Solutions</a>
             <a href="#about" class="block text-gray-700 hover:text-blue-600 font-medium py-2 rounded-md transition duration-300 ease-in-out">About Us</a>
             <a href="#contact" class="block text-gray-700 hover:text-blue-600 font-medium py-2 rounded-md transition duration-300 ease-in-out">Contact</a>
         </nav>
@@ -371,19 +538,162 @@
         </section>
         -->
 
-        <section id="portfolio" class="py-16 md:py-24 bg-white">
+        <section id="industry-solutions" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-6 md:px-12">
-                <h2 class="text-4xl font-bold text-center bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-12">Our Portfolio & Case Studies</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Portfolio items will be added here as projects are completed -->
-                    <div class="bg-gray-50 p-6 rounded-xl border-2 border-dashed border-gray-300 text-center">
-                        <div class="w-16 h-16 mx-auto mb-4 text-gray-400">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                            </svg>
+                <h2 class="text-4xl font-bold text-center bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">Solutions Delivered Across Industries</h2>
+                <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Real solutions, delivered. See how we've helped clients transform their operations with AI-powered solutions across industries.</p>
+                
+                <!-- Tab Navigation -->
+                <div class="flex flex-nowrap justify-center gap-4 mb-12 overflow-x-auto pb-2 scrollbar-hide" style="scrollbar-width: none; -ms-overflow-style: none;">
+                    <button class="tab-button tab-button-active flex-shrink-0" data-tab="healthcare">
+                        Healthcare
+                    </button>
+                    <button class="tab-button tab-button-inactive flex-shrink-0" data-tab="legal">
+                        Legal
+                    </button>
+                    <button class="tab-button tab-button-inactive flex-shrink-0" data-tab="entertainment">
+                        Entertainment
+                    </button>
+                </div>
+
+                <!-- Healthcare Tab Content -->
+                <div id="tab-healthcare" class="tab-content active">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                        <!-- Dental Chatbot Card -->
+                        <div class="solution-card bg-white hover:card-gradient-hover p-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out border border-gray-200">
+                            <div class="flex items-start justify-between mb-4">
+                                <span class="delivered-badge">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Delivered Project
+                                </span>
+                            </div>
+                            
+                            <!-- Video Thumbnail -->
+                            <div class="video-thumbnail mb-6" id="dental-video-thumbnail">
+                                <div class="play-overlay">
+                                    <div class="play-button">
+                                        <svg class="w-8 h-8 text-blue-600 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="absolute inset-0 flex items-center justify-center text-white text-sm font-semibold">
+                                    <div class="text-center">
+                                        <svg class="w-16 h-16 mx-auto mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                        </svg>
+                                        <p>Video Demo</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-2">Dental AI Assistant</h3>
+                            <p class="text-gray-600 mb-4 italic">24/7 multilingual appointment booking & management system</p>
+                            
+                            <p class="text-gray-700 leading-relaxed mb-6">
+                                Successfully delivered an AI-powered dental assistant that handles appointment booking, cancellation, and rescheduling in 5 languages. The system integrates seamlessly with Google Calendar and Outlook, makes intelligent decisions autonomously, and operates 24/7. Result: $1,660/year in cost savings and improved patient satisfaction.
+                            </p>
+
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-900 mb-3">Key Features:</h4>
+                                <ul class="space-y-2 text-sm text-gray-700">
+                                    <li class="flex items-start gap-2">
+                                        <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>5 languages supported (EN, ES, HI, FR, AR)</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>Real-time calendar integration (Google & Outlook)</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>Agentic AI decision-making</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>Full lifecycle management</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="mb-6 p-4 bg-green-50 rounded-lg border border-green-200">
+                                <h4 class="text-sm font-semibold text-gray-900 mb-2">Results Delivered:</h4>
+                                <ul class="space-y-1 text-sm text-gray-700">
+                                    <li>• $1,660/year cost savings</li>
+                                    <li>• 24/7 availability achieved</li>
+                                    <li>• 83 hours/year saved</li>
+                                </ul>
+                            </div>
+
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-900 mb-2">Technologies:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-badge">LangChain</span>
+                                    <span class="tech-badge">React</span>
+                                    <span class="tech-badge">TypeScript</span>
+                                    <span class="tech-badge">XState</span>
+                                    <span class="tech-badge">Express.js</span>
+                                    <span class="tech-badge">GCP Cloud Run</span>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <button class="btn-gradient text-white font-bold py-3 px-6 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-75 flex-1" id="watch-demo-btn">
+                                    Watch Demo Video
+                                </button>
+                                <a href="#contact" class="inline-block bg-white hover:bg-gray-50 text-blue-600 font-bold py-3 px-6 rounded-lg shadow-lg border-2 border-blue-600 text-center transition duration-300 ease-in-out flex-1">
+                                    Request Similar Solution
+                                </a>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-700 mb-2">Case Studies Coming Soon</h3>
-                        <p class="text-gray-600 text-sm">We're working on showcasing our successful projects. Check back soon!</p>
+                    </div>
+                </div>
+
+                <!-- Legal Tab Content -->
+                <div id="tab-legal" class="tab-content">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        <div class="coming-soon-card">
+                            <div class="w-16 h-16 mx-auto mb-4 text-gray-400">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-700 mb-2">Coming Soon</h3>
+                            <p class="text-gray-600 text-sm mb-4">Legal AI Solutions</p>
+                            <p class="text-gray-600 text-sm mb-6">We're expanding into legal tech solutions. AI-powered legal research, document analysis, and client intake automation for law firms.</p>
+                            <a href="#contact" class="inline-block bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-6 rounded-lg transition duration-300 ease-in-out">
+                                Notify Me
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entertainment Tab Content -->
+                <div id="tab-entertainment" class="tab-content">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        <div class="coming-soon-card">
+                            <div class="w-16 h-16 mx-auto mb-4 text-gray-400">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-700 mb-2">Coming Soon</h3>
+                            <p class="text-gray-600 text-sm mb-4">Entertainment AI Solutions</p>
+                            <p class="text-gray-600 text-sm mb-6">AI-driven content creation, audience engagement, and personalized entertainment experiences coming soon.</p>
+                            <a href="#contact" class="inline-block bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-6 rounded-lg transition duration-300 ease-in-out">
+                                Notify Me
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -495,6 +805,40 @@
 
     </main>
 
+    <!-- Video Modal -->
+    <div id="video-modal" class="modal-overlay">
+        <div class="modal-container">
+            <button class="modal-close" id="modal-close-btn" aria-label="Close video modal">
+                <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <div class="mt-4">
+                <!-- Replace PLACEHOLDER_URL with actual YouTube/Vimeo embed URL -->
+                <!-- YouTube embed format: https://www.youtube.com/embed/VIDEO_ID -->
+                <!-- Vimeo embed format: https://player.vimeo.com/video/VIDEO_ID -->
+                <iframe 
+                    id="video-iframe"
+                    class="video-embed" 
+                    src="" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen
+                    style="display: none;">
+                </iframe>
+                <div id="video-placeholder" class="video-embed bg-gray-100 flex items-center justify-center text-gray-500">
+                    <div class="text-center">
+                        <svg class="w-16 h-16 mx-auto mb-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                        <p class="text-sm font-semibold">Video URL will be added here</p>
+                        <p class="text-xs mt-1">Replace PLACEHOLDER_URL in the iframe src attribute</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Floating CTA Button -->
     <div id="floating-cta" class="fixed bottom-6 right-6 z-50 hidden md:block">
         <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-full shadow-2xl transform hover:scale-110 transition duration-300 ease-in-out flex items-center gap-2 animate-bounce">
@@ -515,7 +859,7 @@
                     <ul class="space-y-2 text-sm">
                         <li><a href="#home" class="hover:text-blue-600 transition">Home</a></li>
                         <li><a href="#solutions" class="hover:text-blue-600 transition">Solutions</a></li>
-                        <li><a href="#portfolio" class="hover:text-blue-600 transition">Portfolio</a></li>
+                        <li><a href="#industry-solutions" class="hover:text-blue-600 transition">Industry Solutions</a></li>
                         <li><a href="#about" class="hover:text-blue-600 transition">About Us</a></li>
                         <li><a href="#contact" class="hover:text-blue-600 transition">Contact</a></li>
                     </ul>
@@ -819,6 +1163,102 @@
                 s0.parentNode.insertBefore(s1,s0);
             })();
             */
+
+            // Tab Switching Functionality
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetTab = button.getAttribute('data-tab');
+                    
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('tab-button-active');
+                        btn.classList.add('tab-button-inactive');
+                    });
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked button and corresponding content
+                    button.classList.remove('tab-button-inactive');
+                    button.classList.add('tab-button-active');
+                    const targetContent = document.getElementById(`tab-${targetTab}`);
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                    }
+                });
+            });
+
+            // Video Modal Functionality
+            const videoModal = document.getElementById('video-modal');
+            const modalCloseBtn = document.getElementById('modal-close-btn');
+            const videoThumbnail = document.getElementById('dental-video-thumbnail');
+            const watchDemoBtn = document.getElementById('watch-demo-btn');
+            const videoIframe = document.getElementById('video-iframe');
+            const videoPlaceholder = document.getElementById('video-placeholder');
+            
+            // Video URL placeholder - Replace with actual YouTube/Vimeo embed URL
+            // Example YouTube: https://www.youtube.com/embed/VIDEO_ID
+            // Example Vimeo: https://player.vimeo.com/video/VIDEO_ID
+            const VIDEO_URL = ''; // Add your video URL here
+
+            function openVideoModal() {
+                if (videoModal) {
+                    videoModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    
+                    // If video URL is provided, load it
+                    if (VIDEO_URL) {
+                        videoIframe.src = VIDEO_URL;
+                        videoIframe.style.display = 'block';
+                        videoPlaceholder.style.display = 'none';
+                    } else {
+                        videoIframe.style.display = 'none';
+                        videoPlaceholder.style.display = 'flex';
+                    }
+                }
+            }
+
+            function closeVideoModal() {
+                if (videoModal) {
+                    videoModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                    // Stop video playback when closing
+                    if (videoIframe) {
+                        videoIframe.src = '';
+                    }
+                }
+            }
+
+            // Open modal triggers
+            if (videoThumbnail) {
+                videoThumbnail.addEventListener('click', openVideoModal);
+            }
+            if (watchDemoBtn) {
+                watchDemoBtn.addEventListener('click', openVideoModal);
+            }
+
+            // Close modal triggers
+            if (modalCloseBtn) {
+                modalCloseBtn.addEventListener('click', closeVideoModal);
+            }
+            if (videoModal) {
+                videoModal.addEventListener('click', (e) => {
+                    // Close if clicking on overlay (not the modal container)
+                    if (e.target === videoModal) {
+                        closeVideoModal();
+                    }
+                });
+            }
+
+            // Close modal on ESC key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && videoModal && videoModal.classList.contains('active')) {
+                    closeVideoModal();
+                }
+            });
         });
     </script>
 </body>
